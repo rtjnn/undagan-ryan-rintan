@@ -13,10 +13,8 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
   const searchParams = useSearchParams();
   const nama = searchParams.get("nama") || "";
   const [showContent, setShowContent] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    setHydrated(true);
     const timeout = setTimeout(() => setShowContent(true), 300);
     return () => clearTimeout(timeout);
   }, []);
@@ -67,13 +65,25 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
       >
         <AnimatedContent {...fadeInOptions(0.2)}>
           <div className="flex flex-col items-center mb-6">
-            <Image src="/gambar/4.png" alt="logo" width={240} height={240} className="w-48 md:w-60" />
+            <Image
+              src="/gambar/4.png"
+              alt="logo"
+              width={240}
+              height={240}
+              className="w-48 md:w-60"
+            />
           </div>
         </AnimatedContent>
 
         <AnimatedContent {...fadeInOptions(0.2)}>
           <div className="flex justify-center mb-6">
-            <Image src="/gambar/2.png" alt="ornamen emas tengah" width={600} height={80} className="w-[300px] md:w-[500px]" />
+            <Image
+              src="/gambar/2.png"
+              alt="ornamen emas tengah"
+              width={600}
+              height={80}
+              className="w-[300px] md:w-[500px]"
+            />
           </div>
         </AnimatedContent>
 
@@ -85,8 +95,8 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
           </div>
         </AnimatedContent>
 
-        {hydrated && nama && (
-          <AnimatedContent {...fadeInOptions(0.2, "horizontal")}> 
+        {nama && (
+          <AnimatedContent {...fadeInOptions(0.2, "horizontal")}>
             <div className="text-center text-green-900 text-2xl md:text-3xl font-semibold font-serif uppercase tracking-wide mb-8">
               {nama}
             </div>

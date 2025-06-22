@@ -269,7 +269,9 @@ export default function HalamanKedua() {
                   Scan me
                 </p>
                 <div className="bg-white p-2 rounded-xl shadow-lg inline-block">
-                  <img
+                  <Image
+                  width={200}
+                  height={200}
                     src="/gambar/qr.png"
                     alt="QR Lokasi"
                     className="w-40 h-40 object-contain"
