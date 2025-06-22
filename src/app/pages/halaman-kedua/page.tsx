@@ -4,10 +4,10 @@ import AnimatedContent from "@/components/AnimatedContent/AnimatedContent";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 export default function HalamanKedua() {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   // const nama = searchParams.get("nama") || "";
 
   return (
