@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, Suspense } from "react";
 import HalamanKedua from "./pages/halaman-kedua/page";
 import HalamanAwal from "@/components/HalamanAwal";
 
@@ -13,14 +12,17 @@ export default function Home() {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative">
       {/* Render Halaman Kedua langsung saat isSplit true */}
       {isSplit && <HalamanKedua />}
 
       {/* Halaman Awal di atas HalamanKedua */}
       {!isSplit && (
-        <div className=" w-screen h-screen">
-          <HalamanAwal onNext={handleNext} />
+        <div className="w-screen h-screen">
+          {/* ⛑ Bungkus HalamanAwal dalam Suspense */}
+          <Suspense fallback={null}>
+            <HalamanAwal onNext={handleNext} />
+          </Suspense>
         </div>
       )}
 
