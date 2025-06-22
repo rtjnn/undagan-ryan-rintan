@@ -7,17 +7,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 // import { useSearchParams } from "next/navigation";
-// Fungsi copy dengan alert
-function handleCopy(text: string) {
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      alert("Berhasil disalin ke clipboard!");
-    })
-    .catch(() => {
-      alert("Gagal menyalin ke clipboard.");
-    });
-}
+
 
 export default function HalamanKedua() {
   // const searchParams = useSearchParams();
