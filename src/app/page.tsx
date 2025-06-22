@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/ryan-rinta");
+    router.push("/ryan-rintan");
   }, [router]);
 
   return null; // Tidak render apa-apa karena langsung redirect
