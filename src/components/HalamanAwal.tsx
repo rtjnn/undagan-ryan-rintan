@@ -88,7 +88,7 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
         </AnimatedContent>
 
         <AnimatedContent {...fadeInOptions(0.2, "horizontal", true)}>
-          <div className="text-center text-green-900 text-sm md:text-base leading-relaxed mb-1">
+          <div className="text-center text-green-900 text-md md:text-lg leading-relaxed mb-1 font-tanpearl">
             Kepada Yth.
             <br />
             Bapak/Ibu/Saudara/i
@@ -97,7 +97,7 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
 
         {nama && (
           <AnimatedContent {...fadeInOptions(0.2, "horizontal")}>
-            <div className="text-center text-green-900 text-2xl md:text-3xl font-semibold font-serif uppercase tracking-wide mb-8">
+            <div className="text-center text-green-900 text-2xl md:text-3xlfont-tanpearl uppercase tracking-wide mb-8">
               {nama}
             </div>
           </AnimatedContent>
@@ -115,7 +115,7 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
         </AnimatedContent>
 
         <AnimatedContent {...fadeInOptions(0.2)}>
-          <div className="flex items-center justify-center w-full text-[#916F4C] italic text-sm md:text-base tracking-wide mb-4 min-w-0">
+          <div className="flex items-center justify-center w-full text-[#916F4C] font-tanpearl text-md md:text-lg tracking-wide mb-4 min-w-0">
             <div className="border-t border-[#916F4C] flex-grow mx-2 min-w-0"></div>
             <span>#MeetTheCherry&apos;s</span>
             <div className="border-t border-[#916F4C] flex-grow mx-2 min-w-0"></div>

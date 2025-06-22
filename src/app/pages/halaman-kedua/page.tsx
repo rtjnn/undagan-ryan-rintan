@@ -154,7 +154,7 @@ export default function HalamanKedua() {
         <AnimatedContent
           direction="vertical"
           reverse
-          delay={0.5}
+          delay={1}
           distance={50}
           threshold={0.1}
         >
@@ -168,7 +168,7 @@ export default function HalamanKedua() {
         {/* Tanggal & Tempat */}
         <AnimatedContent
           direction="vertical"
-          delay={0.5}
+          delay={1}
           distance={50}
           duration={1.5}
           threshold={0.1}
@@ -218,12 +218,21 @@ export default function HalamanKedua() {
             </div>
           </div>
         </AnimatedContent>
+
+        <AnimatedContent
+                direction="vertical"
+                
+                delay={1}
+                distance={50}
+                threshold={0.1}
+              >
         <div className="flex justify-center ">
           <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
             Merupakan suatu kehormatan Bapak/Ibu/Saudara/i berkenan hadir untuk
             memberikan do’a restu kepada kedua mempelai.
           </p>
         </div>
+        </AnimatedContent>
 
         {/* Perhatian */}
         <div className="flex items-center justify-center px-4 py-12">
@@ -231,7 +240,7 @@ export default function HalamanKedua() {
             <AnimatedContent
               direction="vertical"
               reverse
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
@@ -251,10 +260,17 @@ export default function HalamanKedua() {
                 Diharapkan untuk tidak membawa hadiah berupa barang.
               </AnimatedContent>
             </ol>
-
+            <AnimatedContent
+              direction="vertical"
+              delay={1}
+              distance={50}
+              threshold={0.1}
+              reverse
+            >
             <h2 className="text-2xl md:text-3xl  mb-2 font-tanpearl">
               Turut Mengundang
             </h2>
+            </AnimatedContent>
 
             <ol className="text-[#916F4C] font-tanpearl space-y-4 text-left list-decimal pl-6 mb-8 text-sm md:text-lg">
               {[
@@ -278,7 +294,7 @@ export default function HalamanKedua() {
                   key={i}
                   direction="horizontal"
                   reverse={i % 2 === 0}
-                  delay={0.5}
+                  delay={1}
                   distance={50}
                   threshold={0.1}
                 >
@@ -289,7 +305,7 @@ export default function HalamanKedua() {
 
             <AnimatedContent
               direction="vertical"
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
@@ -316,18 +332,18 @@ export default function HalamanKedua() {
             <AnimatedContent
               direction="vertical"
               reverse
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
-              <h2 className="text-[28px] md:text-[32px] font-[Cinzel] font-semibold mb-4 tracking-wide">
-                Lokasi
+              <h2 className="text-2xl md:text-3xl font-tanpearl mb-4 tracking-wide">
+                Lokasi Acara
               </h2>
             </AnimatedContent>
             <AnimatedContent
               direction="horizontal"
               reverse
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
@@ -348,7 +364,7 @@ export default function HalamanKedua() {
             </AnimatedContent>
             <AnimatedContent
               direction="horizontal"
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
@@ -384,16 +400,16 @@ export default function HalamanKedua() {
         <div className="text-center px-4 py-10">
           <AnimatedContent
             direction="vertical"
-            delay={0.5}
+            delay={1}
             distance={50}
             threshold={0.1}
             reverse
           >
-            <h2 className="text-xl md:text-2xl font-serif font-bold tracking-widest uppercase mb-1">
+            <h2 className="text-xl md:text-2xl font-tanpearl tracking-widest uppercase mb-1">
               Wedding
             </h2>
-            <p className="italic text-lg md:text-xl text-gray-600 mb-6">gift</p>
-            <p className="max-w-xl mx-auto text-sm md:text-base text-gray-700 mb-10">
+            <p className="font-tangerine text-2xl md:text-4xl text-gray-600 mb-2">gift</p>
+            <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
               Doa restu anda merupakan karunia yang sangat berarti bagi kami,
               dan jika memberi adalah ungkapan tanda kasih anda, anda dapat
               memberi kado secara cashless.
@@ -403,7 +419,7 @@ export default function HalamanKedua() {
             {/* Kartu Rekening */}
             <AnimatedContent
               direction="horizontal"
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
               reverse
@@ -450,7 +466,7 @@ export default function HalamanKedua() {
             {/* Kartu Kirim Hadiah */}
             <AnimatedContent
               direction="horizontal"
-              delay={0.5}
+              delay={1}
               distance={50}
               threshold={0.1}
             >
