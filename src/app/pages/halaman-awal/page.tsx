@@ -107,7 +107,7 @@ export default function HalamanAwal({ onNext }: HalamanAwalProps) {
         <AnimatedContent {...fadeInOptions(0.2)}>
           <div className="flex items-center justify-center w-full text-[#916F4C] italic text-sm md:text-base tracking-wide mb-4 min-w-0">
             <div className="border-t border-[#916F4C] flex-grow mx-2 min-w-0"></div>
-            <span>#MeetTheCherry's</span>
+            <span>#MeetTheCherry&apos;s</span>
             <div className="border-t border-[#916F4C] flex-grow mx-2 min-w-0"></div>
           </div>
         </AnimatedContent>

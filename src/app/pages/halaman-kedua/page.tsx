@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function HalamanKedua() {
   const searchParams = useSearchParams();
-  const nama = searchParams.get("nama") || "";
+  // const nama = searchParams.get("nama") || "";
 
   return (
     <div
