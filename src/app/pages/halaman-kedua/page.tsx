@@ -1,10 +1,22 @@
 "use client";
 
 import AnimatedContent from "@/components/AnimatedContent/AnimatedContent";
+import UcapanForm from "@/components/UcapanForm/UcapanForm";
 import Image from "next/image";
 import Link from "next/link";
 
 // import { useSearchParams } from "next/navigation";
+// Fungsi copy dengan alert
+function handleCopy(text: string) {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("Berhasil disalin ke clipboard!");
+    })
+    .catch(() => {
+      alert("Gagal menyalin ke clipboard.");
+    });
+}
 
 export default function HalamanKedua() {
   // const searchParams = useSearchParams();
@@ -54,6 +66,23 @@ export default function HalamanKedua() {
             />
           </AnimatedContent>
         </div>
+        <AnimatedContent
+          direction="vertical"
+          reverse
+          delay={1}
+          distance={50}
+          threshold={0.1}
+        >
+          <div className="flex justify-center p-10">
+            <Image
+              src="/gambar/arab.png"
+              alt="Mempelai"
+              width={220}
+              height={300}
+              className="my-4 md:my-0"
+            />
+          </div>
+        </AnimatedContent>
       </section>
 
       {/* === KONTEN UTAMA === */}
@@ -65,17 +94,7 @@ export default function HalamanKedua() {
           distance={50}
           threshold={0.1}
         >
-          <div className="flex justify-center p-3">
-            <Image
-              src="/gambar/arab.png"
-              alt="Mempelai"
-              width={120}
-              height={200}
-              className="my-4 md:my-0"
-            />
-          </div>
-
-          <p className="max-w-md mx-auto text-sm md:text-base text-gray-700 mb-8">
+          <p className="max-w-md mx-auto text-sm md:text-lg text-gray-700 mb-8 font-tanpearl">
             Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang
             Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra-putri
             kami:
@@ -92,10 +111,10 @@ export default function HalamanKedua() {
             threshold={0.1}
           >
             <div className="max-w-xs text-center">
-              <h2 className="text-lg md:text-2xl font-semibold text-green-800">
+              <h2 className="text-2xl md:text-4xl font-semibold text-green-800 font-tangerine">
                 John Ryan Cherry
               </h2>
-              <p className="text-sm text-gray-700">
+              <p className="text-md md:text-xl text-gray-700 font-tanpearl">
                 Putra dari Bapak Michael Cherry dan Ibu Joanna Cherry
               </p>
             </div>
@@ -122,69 +141,88 @@ export default function HalamanKedua() {
             threshold={0.1}
           >
             <div className="max-w-xs text-center">
-              <h2 className="text-lg md:text-2xl font-semibold text-green-800">
+              <h2 className="text-2xl md:text-4xl font-semibold text-green-800 font-tangerine">
                 Rintan Aprillia Jayusman
               </h2>
-              <p className="text-sm text-gray-700">
+              <p className="text-md md:text-xl text-gray-700 font-tanpearl">
                 Putri dari Bapak Dedi Jayusman dan Ibu Ratna Herlyati
               </p>
             </div>
           </AnimatedContent>
         </div>
+        <AnimatedContent
+          direction="vertical"
+          reverse
+          delay={0.5}
+          distance={50}
+          threshold={0.1}
+        >
+          <div className="flex justify-center ">
+            <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
+              yang insya Allah dilaksanakan pada :
+            </p>
+          </div>
+        </AnimatedContent>
 
         {/* Tanggal & Tempat */}
         <AnimatedContent
           direction="vertical"
-          delay={1}
+          delay={0.5}
           distance={50}
           duration={1.5}
           threshold={0.1}
         >
-          <div className="py-12 relative font-serif text-[#456b4d]">
-            <div className="absolute left-11 top-12 sm:top-10 text-[10px] sm:text-sm md:text-xl font-semibold">
+          <div className="py-12 relative font-serif text-[#5c3613]">
+            <div className="absolute left-8 md:left-25 top-18 md:top-15 text-sm md:text-xl font-tanpearl">
               Akad Pernikahan
             </div>
 
-            <div className="absolute right-11 top-12 sm:top-10 text-[10px] sm:text-sm md:text-xl font-semibold">
+            <div className="absolute right-8 md:right-25 top-18 md:top-15 text-sm md:text-xl font-tanpearl">
               Tempat
             </div>
-            <div className="absolute top-8 left-1/2 -translate-x-1/2 text-[10px] sm:text-sm md:text-xl text-[#6e8b73] font-semibold">
+            <div className="absolute top-15 md:top-8 left-1/2 -translate-x-1/2 text-sm md:text-xl font-tanpearl ">
               Sabtu
             </div>
 
-            <div className="relative w-full max-w-[90vw] sm:max-w-[600px] h-[130px] flex items-center justify-center mx-auto mt-6">
-              <div className="clip-pita-left bg-[#456b4d] w-1/2 h-[80px] flex items-center justify-center text-white">
+            <div className="relative w-full max-w-[90vw] sm:max-w-[600px] h-[130px] flex items-center justify-center mx-auto mt-6 text-[#fff6d2]">
+              <div className="clip-pita-left bg-[#456b4d] w-1/2 h-[80px] flex items-center justify-center ">
                 <div className="text-center pl-2">
-                  <p className="text-lg md:text-xl font-bold leading-none">
+                  <p className="text-lg md:text-xl font-tanpearl leading-none ">
                     08.00
                   </p>
                   <p className="text-sm md:text-base">WIB</p>
                 </div>
               </div>
-              <div className="clip-pita-right bg-[#456b4d] w-1/2 h-[80px] flex items-center justify-center text-white">
+              <div className="clip-pita-right bg-[#456b4d] w-1/2 h-[80px] flex items-center justify-center">
                 <div className="text-center pr-2">
-                  <p className="text-sm md:text-base font-semibold leading-none">
+                  <p className="text-sm md:text-base font-tanpearl leading-none">
                     Villa
                   </p>
-                  <p className="text-sm md:text-base font-semibold leading-none">
+                  <p className="text-sm md:text-base font-tanpearl leading-none">
                     Kembar
                   </p>
                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#6e8b73] w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full z-10 shadow-md text-white flex flex-col items-center justify-center text-center p-2">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#6e8b73] w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full z-10 shadow-md text-[#fff6d2] flex flex-col items-center justify-center text-center p-2">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-tanpearl leading-tight">
                   12
                 </p>
-                <p className="text-sm sm:text-lg md:text-xl leading-tight">
+                <p className="text-sm sm:text-lg md:text-xl font-tanpearl leading-tight">
                   Juli
                 </p>
-                <p className="text-sm sm:text-xl md:text-2xl font-bold leading-tight">
+                <p className="text-sm sm:text-xl md:text-2xl font-tanpearl leading-tight">
                   2025
                 </p>
               </div>
             </div>
           </div>
         </AnimatedContent>
+        <div className="flex justify-center ">
+          <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
+            Merupakan suatu kehormatan Bapak/Ibu/Saudara/i berkenan hadir untuk
+            memberikan do’a restu kepada kedua mempelai.
+          </p>
+        </div>
 
         {/* Perhatian */}
         <div className="flex items-center justify-center px-4 py-12">
@@ -192,16 +230,16 @@ export default function HalamanKedua() {
             <AnimatedContent
               direction="vertical"
               reverse
-              delay={1}
+              delay={0.5}
               distance={50}
               threshold={0.1}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+              <h2 className="text-2xl md:text-3xl mb-2 font-tanpearl underline">
                 Mohon Diperhatikan
               </h2>
             </AnimatedContent>
-            <div className="w-3/4 mx-auto border-t-2 border-[#456b4d] mb-6"></div>
-            <ol className="text-[#916F4C] font-serif space-y-6 text-left list-decimal pl-6 mb-8 text-base md:text-lg">
+
+            <ol className="text-[#916F4C] font-tanpearl space-y-6 text-left pl-6 mb-8 text-xl md:text-2xl">
               <AnimatedContent
                 direction="horizontal"
                 reverse
@@ -209,27 +247,55 @@ export default function HalamanKedua() {
                 distance={50}
                 threshold={0.1}
               >
-                <li>Diharapkan tidak membawa anak di bawah 12thn</li>
-              </AnimatedContent>
-              <AnimatedContent
-                direction="horizontal"
-                delay={1}
-                distance={50}
-                threshold={0.1}
-              >
-                <li>Diharapkan untuk tidak membawa hadiah berupa barang.</li>
+                Diharapkan untuk tidak membawa hadiah berupa barang.
               </AnimatedContent>
             </ol>
+
+            <h2 className="text-2xl md:text-3xl md:text-4xl mb-2 font-tanpearl">
+              Turut Mengundang
+            </h2>
+
+            <ol className="text-[#916F4C] font-tanpearl space-y-4 text-left list-decimal pl-6 mb-8 text-sm md:text-lg">
+              {[
+                "Komisaris Besar Polisi Donyar Kusumadji, S.I.K (Dansat Brimob Jabar)",
+                "Komisaris Polisi Maman Ismail, A.Md (Danyon B Pelopor)",
+                "Komisaris Polisi Dedi Gunadi, S.Pd (Wakil Komandan Batalyon B Pelopor)",
+                "Komisaris Polisi Saeful Bahri (Kabagops Res Cimahi)",
+                "Komisaris Polisi Asep Rahman S.AP.M.M (Kabagops Subang)",
+                "Ajun Komisaris Polisi Heru Mustoko, S.Kom, M.M (Pasiops Batalyon B Pelopor)",
+                "Komisaris Polisi Hadi Mulyana, SH, MH (Kapolsek Lembang)",
+                "Ajun Komisaris Polisi Ikin Sodikin, S.H (Kapolsek Pagaden)",
+                "Ajun Komisaris Polisi Endang Suganda (Kapolsek Kota Subang)",
+                "Mr. ROGER OWEN WETHERHOLT",
+                "Bpk. Drs. H. Tajudin, M.Ag (Kades Cikole)",
+                "Bpk. H. Asep Stroberi",
+                "Bpk. OLAV",
+                "Bpk. Adang Suganda (Wanayasa)",
+                "Bpk. Zeend (Buruan uyut)",
+              ].map((nama, i) => (
+                <AnimatedContent
+                  key={i}
+                  direction="horizontal"
+                  reverse={i % 2 === 0}
+                  delay={0.5}
+                  distance={50}
+                  threshold={0.1}
+                >
+                  <li>{nama}</li>
+                </AnimatedContent>
+              ))}
+            </ol>
+
             <AnimatedContent
               direction="vertical"
-              delay={1}
+              delay={0.5}
               distance={50}
               threshold={0.1}
             >
-              <p className="italic text-sm md:text-base text-[#456b4d] mb-1">
+              <p className="text-3xl md:text-5xl text-[#456b4d] mb-1 font-tangerine ">
                 Untuk perhatiannya kami ucapkan banyak
               </p>
-              <p className="italic text-sm md:text-base text-[#456b4d]">
+              <p className="text-3xl md:text-5xl text-[#456b4d] font-tangerine">
                 Terimakasih kepada Bapak, Ibu, Saudara/i.
               </p>
             </AnimatedContent>
@@ -249,7 +315,7 @@ export default function HalamanKedua() {
             <AnimatedContent
               direction="vertical"
               reverse
-              delay={1}
+              delay={0.5}
               distance={50}
               threshold={0.1}
             >
@@ -260,7 +326,7 @@ export default function HalamanKedua() {
             <AnimatedContent
               direction="horizontal"
               reverse
-              delay={1}
+              delay={0.5}
               distance={50}
               threshold={0.1}
             >
@@ -270,8 +336,8 @@ export default function HalamanKedua() {
                 </p>
                 <div className="bg-white p-2 rounded-xl shadow-lg inline-block">
                   <Image
-                  width={200}
-                  height={200}
+                    width={200}
+                    height={200}
                     src="/gambar/qr.png"
                     alt="QR Lokasi"
                     className="w-40 h-40 object-contain"
@@ -281,7 +347,7 @@ export default function HalamanKedua() {
             </AnimatedContent>
             <AnimatedContent
               direction="horizontal"
-              delay={1}
+              delay={0.5}
               distance={50}
               threshold={0.1}
             >
@@ -313,6 +379,119 @@ export default function HalamanKedua() {
             </AnimatedContent>
           </div>
         </div>
+
+        <div className="text-center px-4 py-10">
+          <AnimatedContent
+            direction="vertical"
+            delay={0.5}
+            distance={50}
+            threshold={0.1}
+            reverse
+          >
+            <h2 className="text-xl md:text-2xl font-serif font-bold tracking-widest uppercase mb-1">
+              Wedding
+            </h2>
+            <p className="italic text-lg md:text-xl text-gray-600 mb-6">gift</p>
+            <p className="max-w-xl mx-auto text-sm md:text-base text-gray-700 mb-10">
+              Doa restu anda merupakan karunia yang sangat berarti bagi kami,
+              dan jika memberi adalah ungkapan tanda kasih anda, anda dapat
+              memberi kado secara cashless.
+            </p>
+          </AnimatedContent>
+          <div className="flex flex-col md:flex-row justify-center gap-6 max-w-5xl mx-auto px-4">
+            {/* Kartu Rekening */}
+            <AnimatedContent
+              direction="horizontal"
+              delay={0.5}
+              distance={50}
+              threshold={0.1}
+              reverse
+            >
+              <div className="shadow-md rounded-xl p-6 flex-1 max-w-md min-w-0 text-center backdrop-blur-sm">
+                <div className="flex justify-center mb-4">
+                  <Image
+                  width={1000}
+                  height={1000}
+                    src="/gambar/logo-bca.png"
+                    alt="Logo BCA"
+                    className="h-full"
+                  />
+                </div>
+                <hr className="border-t-[1.5px] border-green-900 my-4 mx-auto w-3/4" />
+                <p className="text-lg font-semibold text-gray-800 mb-2 tracking-widest">
+                  8090393902
+                </p>
+                <button
+                  onClick={() => handleCopy("8090393902")}
+                  className="bg-green-900 text-white text-sm px-4 py-1 rounded-full flex items-center justify-center mx-auto gap-1 hover:bg-green-800"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2M16 8h2a2 2 0 012 2v8a2 2 0 01-2 2H10a2 2 0 01-2-2v-2"
+                    />
+                  </svg>
+                  Salin Rekening
+                </button>
+                <p className="text-sm mt-3 text-gray-700">
+                  a.n. Mochamad Reynaldi Ardiansyah
+                </p>
+              </div>
+            </AnimatedContent>
+
+            {/* Kartu Kirim Hadiah */}
+            <AnimatedContent
+              direction="horizontal"
+              delay={0.5}
+              distance={50}
+              threshold={0.1}
+            >
+              <div className="shadow-md rounded-xl p-6 flex-1 max-w-md min-w-0 text-center backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                  Kirim Hadiah
+                </h3>
+                <hr className="border-t-[1.5px] border-green-900 my-4 mx-auto w-3/4" />
+                <p className="text-sm md:text-base text-gray-700 mb-4">
+                  Irey Sanjaya – Alamat : Jalan terusan setraria 3 No 10A Kec.
+                  Sukajadi, Kota Bandung, 40164. Komplek Perumahan Puri
+                  Syailendra
+                </p>
+                <button
+                  onClick={() =>
+                    handleCopy(
+                      "Jalan terusan setraria 3 No 10A Kec. Sukajadi, Kota Bandung, 40164. Komplek Perumahan Puri Syailendra"
+                    )
+                  }
+                  className="bg-green-900 text-white text-sm px-4 py-1 rounded-full flex items-center justify-center mx-auto gap-1 hover:bg-green-800"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2M16 8h2a2 2 0 012 2v8a2 2 0 01-2 2H10a2 2 0 01-2-2v-2"
+                    />
+                  </svg>
+                  Salin Alamat
+                </button>
+              </div>
+            </AnimatedContent>
+          </div>
+        </div>
+
+        <UcapanForm />
       </main>
 
       {/* === SECTION: DEKORASI BAWAH === */}

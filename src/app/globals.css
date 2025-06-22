@@ -4,6 +4,7 @@
     --background: #ffffff;
     --foreground: #171717;
   }
+  
 
 
 
@@ -83,3 +84,9 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%);
 
   }
+.font-tanpearl {
+  font-family: 'Tan Pearl', serif;
+}
+.font-tangerine {
+  font-family: 'Tangerine', cursive;
+}
