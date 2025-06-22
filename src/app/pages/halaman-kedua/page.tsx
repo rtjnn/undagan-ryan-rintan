@@ -8,7 +8,6 @@ import { Suspense } from "react";
 
 // import { useSearchParams } from "next/navigation";
 
-
 export default function HalamanKedua() {
   // const searchParams = useSearchParams();
   // const nama = searchParams.get("nama") || "";
@@ -164,11 +163,12 @@ export default function HalamanKedua() {
           threshold={0.1}
         >
           <div className="py-12 relative font-serif text-[#5c3613]">
-            <div className="absolute left-8 md:left-25 top-18 md:top-15 text-sm md:text-xl font-tanpearl">
-              Akad Pernikahan
+            <div className="absolute left-17 md:left-44 top-16 md:top-11 text-sm md:text-xl font-tanpearl leading-none">
+              <div>Akad</div>
+              <div>Pernikahan</div>
             </div>
 
-            <div className="absolute right-8 md:right-25 top-18 md:top-15 text-sm md:text-xl font-tanpearl">
+            <div className="absolute right-17 md:right-48 top-18 md:top-15 text-sm md:text-xl font-tanpearl">
               Tempat
             </div>
             <div className="absolute top-15 md:top-8 left-1/2 -translate-x-1/2 text-sm md:text-xl font-tanpearl ">
@@ -178,6 +178,7 @@ export default function HalamanKedua() {
             <div className="relative w-full max-w-[90vw] sm:max-w-[600px] h-[130px] flex items-center justify-center mx-auto mt-6 text-[#fff6d2]">
               <div className="clip-pita-left bg-[#456b4d] w-1/2 h-[80px] flex items-center justify-center ">
                 <div className="text-center pl-2">
+                 
                   <p className="text-lg md:text-xl font-tanpearl leading-none ">
                     08.00
                   </p>
@@ -210,18 +211,17 @@ export default function HalamanKedua() {
         </AnimatedContent>
 
         <AnimatedContent
-                direction="vertical"
-                
-                delay={1}
-                distance={50}
-                threshold={0.1}
-              >
-        <div className="flex justify-center ">
-          <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
-            Merupakan suatu kehormatan Bapak/Ibu/Saudara/i berkenan hadir untuk
-            memberikan do’a restu kepada kedua mempelai.
-          </p>
-        </div>
+          direction="vertical"
+          delay={1}
+          distance={50}
+          threshold={0.1}
+        >
+          <div className="flex justify-center ">
+            <p className="text-sm md:text-lg text-gray-700 font-tanpearl">
+              Merupakan suatu kehormatan Bapak/Ibu/Saudara/i berkenan hadir
+              untuk memberikan do’a restu kepada kedua mempelai.
+            </p>
+          </div>
         </AnimatedContent>
 
         {/* Perhatian */}
@@ -247,9 +247,18 @@ export default function HalamanKedua() {
                 distance={50}
                 threshold={0.1}
               >
-                Diharapkan untuk tidak membawa hadiah berupa barang.
+                <li>Diharapkan tidak membawa anak di bawah 12 tahun.</li>
+              </AnimatedContent>
+              <AnimatedContent
+                direction="horizontal"
+                delay={1}
+                distance={50}
+                threshold={0.1}
+              >
+                <li>Diharapkan untuk tidak membawa hadiah berupa barang.</li>
               </AnimatedContent>
             </ol>
+
             <AnimatedContent
               direction="vertical"
               delay={1}
@@ -257,9 +266,9 @@ export default function HalamanKedua() {
               threshold={0.1}
               reverse
             >
-            <h2 className="text-2xl md:text-3xl  mb-2 font-tanpearl">
-              Turut Mengundang
-            </h2>
+              <h2 className="text-2xl md:text-3xl  mb-2 font-tanpearl">
+                Turut Mengundang
+              </h2>
             </AnimatedContent>
 
             <ol className="text-[#916F4C] font-tanpearl space-y-4 text-left list-decimal pl-6 mb-8 text-sm md:text-lg">
@@ -387,12 +396,9 @@ export default function HalamanKedua() {
           </div>
         </div>
 
-        
         <Suspense fallback={<div>Memuat halaman ucapan...</div>}>
           <UcapanForm />
         </Suspense>
-
-        
       </main>
 
       {/* === SECTION: DEKORASI BAWAH === */}

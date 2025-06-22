@@ -1,52 +1,14 @@
 "use client";
 
-import { useState, Suspense } from "react";
-import HalamanKedua from "./pages/halaman-kedua/page";
-import HalamanAwal from "@/components/HalamanAwal";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [isSplit, setIsSplit] = useState(false);
+  const router = useRouter();
 
-  const handleNext = () => {
-    setIsSplit(true);
-  };
+  useEffect(() => {
+    router.push("/ryan-rinta");
+  }, [router]);
 
-  return (
-    <div className="relative">
-      {/* Render Halaman Kedua langsung saat isSplit true */}
-      {isSplit && <HalamanKedua />}
-
-      {/* Halaman Awal di atas HalamanKedua */}
-      {!isSplit && (
-        <div className="w-screen h-screen">
-          {/* ⛑ Bungkus HalamanAwal dalam Suspense */}
-          <Suspense fallback={null}>
-            <HalamanAwal onNext={handleNext} />
-          </Suspense>
-        </div>
-      )}
-
-      {/* Split animation */}
-      {isSplit && (
-        <>
-          <div
-            className="fixed top-0 left-0 w-1/2 h-full z-50 animate-split-left max-w-[50vw] overflow-hidden"
-            style={{
-              backgroundColor: "#f9f4e9",
-              backgroundImage: "url('/gambar/3.png')",
-              backgroundSize: "cover",
-            }}
-          />
-          <div
-            className="fixed top-0 right-0 w-1/2 h-full z-50 animate-split-right max-w-[50vw] overflow-hidden"
-            style={{
-              backgroundColor: "#f9f4e9",
-              backgroundImage: "url('/gambar/3.png')",
-              backgroundSize: "cover",
-            }}
-          />
-        </>
-      )}
-    </div>
-  );
+  return null; // Tidak render apa-apa karena langsung redirect
 }
