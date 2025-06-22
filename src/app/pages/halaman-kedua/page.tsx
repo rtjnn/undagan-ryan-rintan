@@ -4,6 +4,7 @@ import AnimatedContent from "@/components/AnimatedContent/AnimatedContent";
 import UcapanForm from "@/components/UcapanForm/UcapanForm";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 // import { useSearchParams } from "next/navigation";
 // Fungsi copy dengan alert
@@ -251,7 +252,7 @@ export default function HalamanKedua() {
               </AnimatedContent>
             </ol>
 
-            <h2 className="text-2xl md:text-3xl md:text-4xl mb-2 font-tanpearl">
+            <h2 className="text-2xl md:text-3xl  mb-2 font-tanpearl">
               Turut Mengundang
             </h2>
 
@@ -410,8 +411,8 @@ export default function HalamanKedua() {
               <div className="shadow-md rounded-xl p-6 flex-1 max-w-md min-w-0 text-center backdrop-blur-sm">
                 <div className="flex justify-center mb-4">
                   <Image
-                  width={1000}
-                  height={1000}
+                    width={1000}
+                    height={1000}
                     src="/gambar/logo-bca.png"
                     alt="Logo BCA"
                     className="h-full"
@@ -490,8 +491,11 @@ export default function HalamanKedua() {
             </AnimatedContent>
           </div>
         </div>
+        <Suspense fallback={<div>Memuat halaman ucapan...</div>}>
+          <UcapanForm />
+        </Suspense>
 
-        <UcapanForm />
+        
       </main>
 
       {/* === SECTION: DEKORASI BAWAH === */}
