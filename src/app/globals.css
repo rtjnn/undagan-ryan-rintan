@@ -1,0 +1,85 @@
+  @import "tailwindcss";
+
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background-image: url('/gambar/3.png');
+    background-color: #f9f4e9;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @keyframes split-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes split-right {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-split-left {
+    animation: split-left 1.2s forwards ease-in-out;
+  }
+
+  .animate-split-right {
+    animation: split-right 1.2s forwards ease-in-out;
+  }
+
+  /* globals.css atau file .css kamu */
+  .clip-panah {
+    clip-path: polygon(
+      0% 0%, 95% 0%, 100% 50%, 95% 100%,
+      0% 100%, 5% 50%
+    );
+  }
+
+  .clip-pita-left {
+    clip-path: polygon(
+      0% 0%,        /* kiri atas */
+      100% 0%,      /* kanan atas */
+      100% 100%,    /* kanan bawah */
+      0% 100%,      /* kiri bawah */
+      10% 50%       /* segitiga masuk dari kiri */
+    );
+  }
+
+  .clip-pita-right {
+    clip-path: polygon(
+      0% 0%,       /* kiri atas */
+      100% 0%,     /* kanan atas */
+      90% 50%,     /* cekungan masuk dari kanan */
+      100% 100%,   /* kanan bawah */
+      0% 100%      /* kiri bawah */
+    );
+  }
+
+
+
+  .clip-pita {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%);
+
+  }
