@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import HalamanAwal from "./pages/halaman-awal/page";
+
 import HalamanKedua from "./pages/halaman-kedua/page";
+import HalamanAwal from "@/components/HalamanAwal";
 
 export default function Home() {
   const [isSplit, setIsSplit] = useState(false);
