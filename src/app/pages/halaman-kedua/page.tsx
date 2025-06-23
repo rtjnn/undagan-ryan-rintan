@@ -5,14 +5,30 @@ import UcapanForm from "@/components/UcapanForm/UcapanForm";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
+import { useEffect, useRef } from "react";
 
 // import { useSearchParams } from "next/navigation";
 
 export default function HalamanKedua() {
   // const searchParams = useSearchParams();
   // const nama = searchParams.get("nama") || "";
+   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const playAudio = () => {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.play().catch((e) => {
+          console.warn("Audio tidak dapat diputar secara otomatis karena pembatasan browser.");
+        });
+      }
+    };
+
+    playAudio();
+  }, []);
 
   return (
+    
     <div
       className=" w-full overflow-x-hidden bg-repeat"
       style={{
@@ -21,6 +37,13 @@ export default function HalamanKedua() {
         WebkitOverflowScrolling: "touch",
       }}
     >
+      <div className="w-full overflow-x-hidden bg-repeat">
+      {/* === Pemutar Lagu === */}
+      <audio ref={audioRef} src="/lagu/musik.mp3" loop />
+
+      {/* ...seluruh isi halaman tetap seperti punyamu */}
+    </div>
+
       {/* === SECTION: DEKORASI ATAS === */}
       <section className="relative z-10 w-full h-[120px] md:h-[180px]">
         <div className="absolute top-0 left-0 z-10">
