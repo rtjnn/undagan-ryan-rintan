@@ -14,18 +14,19 @@ export default function HalamanKedua() {
   // const nama = searchParams.get("nama") || "";
    const audioRef = useRef<HTMLAudioElement>(null);
 
-  useEffect(() => {
-    const playAudio = () => {
-      const audio = audioRef.current;
-      if (audio) {
-        audio.play().catch((e) => {
-          console.warn("Audio tidak dapat diputar secara otomatis karena pembatasan browser.");
-        });
-      }
-    };
+useEffect(() => {
+  const playAudio = () => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.play().catch(() => {
+        console.warn("Audio tidak dapat diputar secara otomatis karena pembatasan browser.");
+      });
+    }
+  };
 
-    playAudio();
-  }, []);
+  playAudio();
+}, []);
+
 
   return (
     
